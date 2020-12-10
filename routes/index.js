@@ -4,7 +4,7 @@ const axios = require('axios');
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
-  const data = await (await axios.get('https://zipcloud.ibsnet.co.jp/api/search?zipcode=7900014')).data;
+  const data = await (await axios.get('https://zipcloud.ibsnet.co.jp/api/search?zipcode=' + req.query.code)).data;
   res.jsonp({ data: data });
 });
 
